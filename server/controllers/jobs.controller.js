@@ -2,15 +2,13 @@ import Job from "../models/job.js";
 
 export const getJobs = async (req, res) => {
   try {
-    const jobs = await Job.find({ isDeleted: false })
-      .sort({ createdAt: -1 });
+    const jobs = await Job.find({ isDeleted: false }).sort({ createdAt: -1 });
 
     res.json(jobs);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch jobs" });
   }
 };
-
 
 export const addJob = async (req, res, next) => {
   try {
@@ -27,9 +25,11 @@ export const addJob = async (req, res, next) => {
 };
 
 export const updateJob = async (req, res) => {
-  const job = await Job.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  const job = await Job.findOneAndUpdate(
+    { _id: req.params.id, isDeleted: false },
+    req.body,
+    { new: true },
+  );
 
   if (!job) {
     return res.status(404).json({ message: "Job not found" });
@@ -42,7 +42,7 @@ export const deleteJob = async (req, res) => {
   const job = await Job.findByIdAndUpdate(
     req.params.id,
     { isDeleted: true },
-    { new: true }
+    { new: true },
   );
 
   if (!job) {
