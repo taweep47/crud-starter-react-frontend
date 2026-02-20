@@ -1,6 +1,15 @@
 # CRUD-Job Tracker 🧾
 
-A fullstack **CRUD system starter** built with **React + Tailwind CSS**  
+A fullstack **CRUD system starter** built with **React + Tailwind CSS** 
+
+---
+
+🌐 Deployment
+
+Frontend: Vercel
+Backend: Render 
+
+Live demo: (https://crud-starter-react-frontend-git-main-taweep47s-projects.vercel.app/)
 
 ---
 
@@ -64,13 +73,6 @@ npm run dev
 # frontend
 cd client
 npm run dev
-
-🌐 Deployment
-
-Frontend: Vercel
-Backend: Render / Railway
-
-Live demo: (coming soon)
 
 🙌 Built by taweep47
 Feel free to fork or use this project as a reference ✨
