@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:3001/api/jobs";
+const API_URL = "https://crud-starter-react-frontend.onrender.com/api/jobs";
 
 const useJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -8,7 +8,7 @@ const useJobs = () => {
   const [deletingId, setDeletingId] = useState(null);
   const [error, setError] = useState(null);
 
-  // 🔹 โหลด jobs ครั้งแรก
+  // โหลด jobs ครั้งแรก
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -28,7 +28,7 @@ const useJobs = () => {
     fetchJobs();
   }, []);
 
-  // 🔹 CREATE
+  // CREATE
   const addJob = async (job) => {
     try {
       const res = await fetch(API_URL, {
@@ -49,7 +49,7 @@ const useJobs = () => {
     }
   };
 
-  // 🔹 UPDATE
+  // UPDATE
   const updateJob = async (job) => {
     const res = await fetch(`${API_URL}/${job._id}`, {
       method: "PUT",
@@ -57,11 +57,15 @@ const useJobs = () => {
       body: JSON.stringify(job),
     });
 
+    if (!res.ok) {
+      throw new Error("Failed to update job");
+    }
+
     const data = await res.json();
     setJobs((prev) => prev.map((j) => (j._id === data._id ? data : j)));
   };
 
-  // 🔹 DELETE
+  // DELETE
   const deleteJob = async (id) => {
     setDeletingId(id);
 

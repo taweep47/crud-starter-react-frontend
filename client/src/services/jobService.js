@@ -1,13 +1,17 @@
-
-const API_URL = "http://localhost:5000/jobs";
+const API_URL = "https://crud-starter-react-frontend.onrender.com/api/jobs";
 
 //ดึงข้อมูลจาก database
 export const getJobs = async () => {
   const res = await fetch(API_URL);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch jobs");
+  }
+
   return res.json();
 };
 
-//เพิ่ม job 
+//เพิ่ม job
 export const createJob = async (job) => {
   const res = await fetch(API_URL, {
     method: "POST",
