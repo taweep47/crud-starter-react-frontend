@@ -1,81 +1,117 @@
-# CRUD-Job Tracker 🧾
+CRUD Job Tracker 🧾
 
-A fullstack **CRUD system starter** built with **React + Tailwind CSS** 
+A full-stack Job Application Tracker built with React, Node.js, Express, and MongoDB.
+This project demonstrates a complete CRUD workflow with modern UI, filtering, and production deployment.
 
----
+🌐 Live Demo
 
-🌐 Deployment
+🔗 Frontend (Vercel):
+https://crud-starter-react-frontend-git-main-taweep47s-projects.vercel.app/
 
-Frontend: Vercel
-Backend: Render 
+🖥 Backend (Render):
+Deployed as REST API service
 
-Live demo: (https://crud-starter-react-frontend-git-main-taweep47s-projects.vercel.app/)
+🚀 Features
 
----
+✅ Create, Edit, Delete job applications
 
-## ✨ Features
+🔍 Search by company or position
 
-- ✅ Add / Edit / Delete job applications
-- 🔍 Search jobs by company or position
-- 🏷️ Filter by status (Applied, Interview, Offer, Rejected)
-- ↕️ Sort jobs (Latest, Company A–Z / Z–A)
-- 🪟 Edit & Confirm modal
-- ⏳ Loading skeleton
-- 🎨 Status badge with colors
+🏷 Filter by status (Applied, Interview, Offer, Rejected)
 
----
+↕ Sort by Latest / Company A–Z / Z–A
 
-## 🛠 Tech Stack
+🪟 Edit modal & Confirm delete modal
 
-### Frontend
-- React
-- Tailwind CSS
-- React Router
-- Heroicons
+⏳ Loading skeleton UI
 
-### Backend
-- Node.js
-- Express
-- MongoDB
-- REST API
+🎨 Color-coded status badges
 
----
+🌐 Production deployment (Frontend + Backend separated)
 
-Getting Started (Local)
+🛠 Tech Stack
+Frontend
 
-### Clone repository ###
+React
+
+Tailwind CSS
+
+React Router
+
+Heroicons
+
+Backend
+
+Node.js
+
+Express
+
+MongoDB (MongoDB Atlas)
+
+REST API
+
+Deployment
+
+Vercel (Frontend)
+
+Render (Backend)
+
+🧠 Architecture
+
+Frontend (React) communicates with a REST API hosted on Render.
+The backend connects to MongoDB Atlas for persistent data storage.
+
+React (Vercel)
+      ↓
+Express API (Render)
+      ↓
+MongoDB Atlas
+⚙ Getting Started (Local Development)
+1️⃣ Clone Repository
 git clone https://github.com/taweep47/crud-starter-react-frontend.git
 cd crud-starter-react-frontend
+2️⃣ Install Dependencies
 
-### Install dependencies ###
-# frontend
+Frontend:
+
 cd client
 npm install
 
-# backend
+Backend:
+
 cd ../server
 npm install
+3️⃣ Environment Variables
 
-### Environment variables ###
-Create .env files in client and server folders.
-
-Example (server):
+Create .env file inside server/:
 
 PORT=5000
-MONGO_URI=your_mongodb_uri
+MONGO_URI=your_mongodb_connection_string
+4️⃣ Run the App
 
-### Run the app ###
+Backend:
 
-# backend
 cd server
 npm run dev
 
-# frontend
+Frontend:
+
 cd client
 npm run dev
+📌 Future Improvements
 
-🙌 Built by taweep47
-Feel free to fork or use this project as a reference ✨
+Authentication (JWT)
 
+Pagination
 
+Dark mode
 
+Dashboard analytics
+
+Role-based access
+
+👤 Author
+
+Taweep47
+
+If you found this project helpful, feel free to fork or use it as a learning reference.
